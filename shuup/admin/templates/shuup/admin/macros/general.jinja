@@ -21,10 +21,10 @@
 {% endmacro %}
 
 {% macro content_block(heading, icon, extra_classes="", id="", collapsed=False) %}
-    <div id="{{ id }}" class="content-block {% if collapsed %}collapsed{% endif %}">
+    <div id="{{ id }}" class="content-block{% if collapsed %} collapsed{% endif %}">
         <div class="title">
             {% if heading %}
-                <h2 class="block-title d-flex align-items-center">{% if icon %} <i class="fa {{ icon }}"></i> {% endif %}{{ heading }}</h2>
+                <h2 class="block-title d-flex align-items-center">{% if icon %}<i class="fa {{ icon }}"></i>{% endif %}{{ heading }}</h2>
             {% endif %}
             <a href="#" class="toggle-contents" data-toggle="collapse" data-target="">
                 <i class="fa fa-chevron-right"></i>
