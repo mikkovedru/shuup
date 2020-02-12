@@ -1,38 +1,9 @@
-import data from './products.json';
-import data2 from './payment_method.json';
+const files = ['products', 'payment_method']
 
+var guideTexts = [];
 
-console.log("Blabal1");
-console.log(data);
+files.map(file => {
+    import(file).then(({default: data}) => guideTexts.push(data))
+})
 
-// var guideTexts = [];
-
-console.log("---------Blabal2-------");
-console.log("data: ");
-console.log(data);
-console.log("data2: ");
-console.log(data2);
-console.log("guideTexts: ");
-console.log(guideTexts);
-
-
-guideTexts.push(data);
-console.log("---------Blabal3-------");
-console.log("data: ");
-console.log(data);
-console.log("data2: ");
-console.log(data2);
-console.log("guideTexts: ");
-console.log(guideTexts);
-
-
-guideTexts.push(data2);
-console.log("---------Blabal4-------");
-console.log("data: ");
-console.log(data);
-console.log("data2: ");
-console.log(data2);
-console.log("guideTexts: ");
-console.log(guideTexts);
-
-
+export default guideTexts

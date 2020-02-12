@@ -1,4 +1,4 @@
-import { index } from './guide_help_texts';
+import guideTexts from './guide_help_texts';
 
 let pathname;
 let title;
@@ -8,7 +8,7 @@ let wasGuideTextProcessed = false;
 $("#guide-button").ready(() => {
   processguideTexts();
   // console.log("param: ");
-  // console.log(guideTexts);
+  console.log('does it work??', guideTexts);
   // guideTexts = [...guideTexts,
   //   {
   //     "shuupUrl":  "/admin/fasdfasdfsd",
