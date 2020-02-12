@@ -293,6 +293,89 @@ https://weblog.west-wind.com/posts/2016/Sep/14/Bootstrap-Modal-Dialog-showing-un
 }
 
 
+.modal-xl {
+  @media (max-width: 767px) {
+    max-width: none !important;
+    width: 100% !important;
+  }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    padding: 0 20px 0 0;
+    max-width: none !important;
+    width: 100% !important;
+  }
+}
+
+.modal-title {
+  color: hsl(205, 100%, 21%);
+}
+
+.modal-body blockquote {
+  border-left: 10px solid hsl(205, 84%, 74%);
+  margin: 2em 30px;
+  padding: 1em 20px;
+  background-color: hsl(205, 79%, 92%);
+  color: hsl(205, 87%, 29%);
+}
+
+.modal-body h3 {
+  margin: 2.5em 0em 1.1em 2em;
+  color: hsl(205, 100%, 21%);
+  text-transform: capitalize;
+}
+
+.modal-body table {
+  border-collapse: collapse;
+  border: 2px solid hsl(205, 74%, 65%);
+  font-family: sans-serif;
+  margin-top: 1.5rem;
+}
+
+.modal-body td, th {
+  padding: 8px 10px;
+  color: hsl(205, 100%, 21%);
+}
+
+.modal-body th {
+  text-align: center;
+  background-color: hsl(205, 97%, 85%);
+  border: 1px solid hsl(205, 74%, 65%)
+}
+
+.modal-body td {
+  text-align: center;
+  border: 1px solid hsl(205, 84%, 74%);
+}
+
+.modal-body tr:nth-child(even) td {
+  background-color: hsl(210, 36%, 96%);
+}
+
+.modal-body tr:nth-child(odd) td {
+  background-color: hsl(212, 33%, 89%);
+}
+
+.modal-body caption {
+  padding: 10px;
+  caption-side: top;
+  color: hsl(205, 82%, 33%);
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#guideModal-videosection {
+  background-color: hsl(205, 79%, 92%);
+}
+
+#guide-button {
+  opacity: 0.4;
+
+  &:hover {
+      color: $secondary !important;
+  }
+}
+
+
 .template-modal-container {
     background: #fff;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
