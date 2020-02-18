@@ -21,6 +21,7 @@
 </div>
 
 <div class="site-links d-none d-lg-block mr-3">
+    <a class="nav-btn shop-btn help-menu" id="guide-button" href="" data-toggle="tooltip" data-placement="bottom" title="{% trans %}Guide{% endtrans %}"><i class="fa fa-question"></i></a>
     <a class="nav-btn shop-btn" href="{{ url("shuup_admin:dashboard") }}" data-toggle="tooltip" data-placement="bottom" title="{% trans %}Go to dashboard{% endtrans %}"><i class="fa fa-dashboard"></i></a>
     <a class="nav-btn shop-btn" href="{{ url("shuup_admin:home") }}" data-toggle="tooltip" data-placement="bottom" title="{% trans %}Go home{% endtrans %}"><i class="fa fa-home"></i></a>
 
@@ -47,7 +48,7 @@
         {% else %}
             <a href="?autoRefresh=30" class="auto-reload dropdown-item">{% trans %}Auto Refresh Every 30s{% endtrans %}</a>
         {% endif %}
-        
+
         <a href="#" class="show-tour dropdown-item">{% trans %}Show Tour{% endtrans %}</a>
         <div class="actions">
             <a href="{{ shuup_admin.get_logout_url() }}" class="btn btn-block btn-inverse">
@@ -56,4 +57,26 @@
         </div>
         {% endif %}
     </div>
+</div>
+
+<div id="guideModal" class="modal fade in" tabindex="-1" role="dialog" focus="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="guideModal-title" class="modal-title">Learn Shuup guide</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div id="guideModal-text" class="modal-body">
+                <p>Unfortunately there was no guide help text found for this particular URL/title.</p>
+            </div>
+            <hr>
+            <div id="guideModal-videosection" class="modal-body text-center" style="display:none;">
+              <h3>Educational video</h3>
+              <iframe id="guideModal-video" frameborder="0" allow="encrypted-media" allowfullscreen style="width:100%; max-width: 560px;" height="315" src=""></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 150px">OK</button>
+            </div>
+        </div>
+    </div>~
 </div>

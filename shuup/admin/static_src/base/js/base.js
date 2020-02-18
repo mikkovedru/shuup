@@ -31,3 +31,4 @@ import './select.js';
 import './components.js';
 import './main-menu.js';
 import './admin-menu.js';
+import './guidehelp.js';

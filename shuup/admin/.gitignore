@@ -1,4 +1,6 @@
 node_modules
 *.map
 static/shuup_admin/css/*
-static/shuup_admin/js/*
+static/shuup_admin/js/*.js
+static/shuup_admin/js/*.map
+!static/shuup_admin/js/guide_help_text/
