@@ -23,32 +23,43 @@ var guideTexts = [];
 // guideTexts.push(data3);
 
 const files = ['products.json', 'service_provider.json', 'service_provider.ejson', 'payment_method.json', ]
-
-
+// const files = ['service_provider.json', ]
 
 
 guideTexts = files.map(file => {
   $.get("/static/shuup_admin/js/guide_help_texts/" + file, json => {
+  // $.get("/static/shuup_admin/json/" + file, json => {
     console.log( "JSON Data: ", json );
     // json = json.replace(/(\r\n|\n|\r)/gm," ");
     // json = json.stringify.replace(/(\r\n|\n|\r)/gm," ");
-    // json = $.parseJSON(json);
     // return json.replace(/(\r\n|\n|\r)/gm," ");
     // return JSON.parse(json);
-    return json
-  }).done(function() {
-    console.log( "second success" );
-    // json = json.stringify.replace(/(\r\n|\n|\r)/gm," ");
-    json = json.replace(/(\r\n|\n|\r)/gm," ");
-    return json;
-  }).fail(function() {console.log("Fails...")});
+    let edit = json.replace(/(\r\n|\n|\r)/gm," ");
+    // JSON.parse(json);
+    return edit;
+  })
 })
+
+
+var json = (function() {
+  var json = null;
+  $.ajax({
+    'async': false,
+    'global': false,
+    'url': "/content.json",
+    'dataType': "json",
+    'success': function(data) {
+      json = data;
+    }
+  });
+  return json;
+})();
+
 
 
 // guideTexts.always(function(){ guideTexts.map(file => {
 //   console.log("Replacing!");
 //   file = file.replace(/(\r\n|\n|\r)/gm, " ");
-//   // file = $.parseJSON(file);
 //   return JSON.parse(file);
 // }) });
 
@@ -56,7 +67,6 @@ guideTexts = files.map(file => {
 //   $.get("/static/shuup_admin/js/guide_help_texts/" + file, json => {
 //     console.log( "JSON Data: ", json );
 //     // json = json.replace(/(\r\n|\n|\r)/gm," ");
-//     // json = $.parseJSON(json);
 //     guideTexts.push(json);
 //   }).done(function() {
 //     console.log( "second success" );
@@ -71,7 +81,6 @@ guideTexts = files.map(file => {
 // guideTexts = guideTexts.map(file => {
 // console.log("Replacing!");
 //   file = file.replace(/(\r\n|\n|\r)/gm, " ");
-//   // file = $.parseJSON(file);
 //   return JSON.parse(file);
 // })
 
