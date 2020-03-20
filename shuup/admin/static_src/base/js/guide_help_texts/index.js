@@ -22,8 +22,8 @@ var guideTexts = [];
 // guideTexts.push(data2);
 // guideTexts.push(data3);
 
-const files = ['products.json', 'service_provider.json', 'service_provider.ejson', 'payment_method.json', ]
-// const files = ['service_provider.json', ]
+const files = ['products.json', 'service_provider.json', 'service_provider.ejson', 'payment_method.json', ];
+// const files = ['service_provider.json', ];
 
 
 guideTexts = files.map(file => {
