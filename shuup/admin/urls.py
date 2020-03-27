@@ -20,6 +20,7 @@ from shuup.admin.module_registry import get_module_urls
 from shuup.admin.utils.urls import admin_url, AdminRegexURLPattern
 from shuup.admin.views.dashboard import DashboardView
 from shuup.admin.views.edit import EditObjectView
+from shuup.admin.views.help import get_help_text
 from shuup.admin.views.home import HomeView
 from shuup.admin.views.impersonate import stop_impersonating_staff
 from shuup.admin.views.menu import MenuToggleView, MenuView
@@ -59,6 +60,7 @@ def get_urls():
         admin_url(r'^edit/$', EditObjectView.as_view(), name='edit', permissions=()),
         admin_url(r'^menu/$', MenuView.as_view(), name='menu', permissions=()),
         admin_url(r'^toggle-menu/$', MenuToggleView.as_view(), name='menu_toggle', permissions=()),
+        admin_url(r'^help-texts/(?P<key>.+)/$', get_help_text(), name='help_texts', permissions=()),
         admin_url(
             r'^stop-impersonating-staff/$', stop_impersonating_staff,
             name="stop-impersonating-staff", permissions=()
